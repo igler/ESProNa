@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[character]]></name>
+<type>object</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[Character predicates (most of them assume an ASCII representation).]]></comment>
+<author><![CDATA[Paulo Moura]]></author>
+<version>1.3</version>
+<date>2011/2/19</date>
+</entity>
+<relations>
+<implements>
+<name><![CDATA[characterp]]></name>
+<scope>public</scope>
+<file><![CDATA[characterp_0]]></file>
+</implements>
+<extends>
+<name><![CDATA[atom]]></name>
+<scope>public</scope>
+<file><![CDATA[atom_0]]></file>
+</extends>
+</relations>
+<predicates>
+<public>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

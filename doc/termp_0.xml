@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[termp]]></name>
+<type>protocol</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[Prolog term utility predicates protocol.]]></comment>
+<author><![CDATA[Paulo Moura]]></author>
+<version>1.31</version>
+<date>2010/6/9</date>
+</entity>
+<relations>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[depth/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[depth(@term,?integer)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the depth of Term is Depth. The depth of atomic terms is zero; the depth of a compound term is one plus the maximium depth of its sub-terms.]]></comment>
+<template><![CDATA[depth(Term,Depth)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[ground/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[ground(@term)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the argument is ground.]]></comment>
+<template><![CDATA[ground(Term)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[new/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[new(-nonvar)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Creates a new term instance (if meaningful).]]></comment>
+<template><![CDATA[new(Term)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[occurs/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[occurs(@var,@term)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the variable occurs in the term.]]></comment>
+<template><![CDATA[occurs(Variable,Term)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[subsumes/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[subsumes(?term,@term)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[The first term subsumes the second term.]]></comment>
+<template><![CDATA[subsumes(General,Specific)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[subterm/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[subterm(?term,+term)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[The first term is a subterm of the second term.]]></comment>
+<template><![CDATA[subterm(Subterm,Term)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[valid/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[valid(@nonvar)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Term is valid.]]></comment>
+<template><![CDATA[valid(Term)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[check/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[check(@nonvar)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Checks if a term is valid. Throws an exception if the term is not valid.]]></comment>
+<template><![CDATA[check(Term)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[variant/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[variant(@term,@term)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Each term is a variant of the other (i.e. they are structurally equivalent).]]></comment>
+<template><![CDATA[variant(Term1,Term2)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[variables/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[variables(@term,-list)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Returns a list of all term variables (ordered as found when doing a depth-first, left-to-right traversal of Term).]]></comment>
+<template><![CDATA[variables(Term,List)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[singletons/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[singletons(@term,-list)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Returns a list of all term singleton variables (ordered as found when doing a depth-first, left-to-right traversal of Term).]]></comment>
+<template><![CDATA[singletons(Term,Singletons)]]></template>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[state_space]]></name>
+<type>object</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[State space description predicates including navigation.]]></comment>
+<author><![CDATA[Written by Paulo Moura, adopted to ESProNa by Michael Igler]]></author>
+<version>1.2</version>
+<date>2011/3/20</date>
+</entity>
+<relations>
+<instantiates>
+<name><![CDATA[class]]></name>
+<scope>public</scope>
+<file><![CDATA[class_0]]></file>
+</instantiates>
+<specializes>
+<name><![CDATA[object]]></name>
+<scope>public</scope>
+<file><![CDATA[object_0]]></file>
+</specializes>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[initial_state/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[initial_state(+process_model,?nonvar)]]></template>
+<solutions>one_or_more</solutions>
+</mode>
+<comment><![CDATA[Initial state.]]></comment>
+<template><![CDATA[initial_state(ProcessModelID,State)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[goal_state/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[goal_state(+process_model,?nonvar)]]></template>
+<solutions>one_or_more</solutions>
+</mode>
+<comment><![CDATA[Goal state.]]></comment>
+<template><![CDATA[goal_state(ProcessModelID,State)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[next_state/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[next_state(+process_model,+nonvar,-nonvar)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Generates a state sucessor.]]></comment>
+<template><![CDATA[next_state(ProcessModelID,State,Next)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[member_path/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[member_path(+nonvar,+list)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if a state is member of a list of states.]]></comment>
+<template><![CDATA[member_path(State,Path)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[navigate/5]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[navigate(+process_model,+list(state),?list(state),?list(path),+term(conditions))]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[...]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[print_state/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[print_state(+nonvar)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Pretty print state.]]></comment>
+<template><![CDATA[print_state(State)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[print_path/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[print_path(+list)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Pretty print a path (list of states).]]></comment>
+<template><![CDATA[print_path(Path)]]></template>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

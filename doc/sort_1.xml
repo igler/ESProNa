@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[sort(A)]]></name>
+<type>object</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[List sorting parameterized by the type of the list elements.]]></comment>
+<author><![CDATA[Paulo Moura]]></author>
+<version>1.0</version>
+<date>2000/7/24</date>
+</entity>
+<relations>
+<uses>
+<name><![CDATA[list]]></name>
+<file><![CDATA[list_0]]></file>
+</uses>
+<uses>
+<name><![CDATA[tracer]]></name>
+<file><![CDATA[tracer_0]]></file>
+</uses>
+<calls>
+<name><![CDATA[comparingp]]></name>
+<file><![CDATA[comparingp_0]]></file>
+</calls>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[sort/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[sort(+list,-list)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Sorts a list in ascending order (quicksort algorithm).]]></comment>
+<template><![CDATA[sort(List,Sorted)]]></template>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+<predicate>
+<name><![CDATA[partition/4]]></name>
+<scope>private</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[partition(+list,+nonvar,-list,-list)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Partition a list in two lists containing the elements smaller and larger than a pivot.]]></comment>
+<template><![CDATA[partition(List,Pivot,Small,Large)]]></template>
+</predicate>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

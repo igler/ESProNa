@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[esprona_best_first(Threshold)]]></name>
+<type>object</type>
+<compilation>static, context_switching_calls, events</compilation>
+<comment><![CDATA[Best first heuristic state space search strategy.]]></comment>
+<author><![CDATA[Written by Paulo Moura, adopted to ESProNa by Michael Igler]]></author>
+<version>1.2</version>
+<date>2008/6/9</date>
+<info>
+<key>source</key>
+<value><![CDATA[Example adapted from the book "Prolog Programming for Artificial Intelligence" by Ivan Bratko.]]></value>
+</info>
+</entity>
+<relations>
+<instantiates>
+<name><![CDATA[esprona_heuristic_search(Threshold)]]></name>
+<scope>public</scope>
+<file><![CDATA[esprona_heuristic_search_1]]></file>
+</instantiates>
+<uses>
+<name><![CDATA[list]]></name>
+<file><![CDATA[list_0]]></file>
+</uses>
+</relations>
+<predicates>
+<public>
+</public>
+<protected>
+</protected>
+<private>
+<predicate>
+<name><![CDATA[expand/10]]></name>
+<scope>private</scope>
+<compilation>static</compilation>
+</predicate>
+<predicate>
+<name><![CDATA[succlist/5]]></name>
+<scope>private</scope>
+<compilation>static</compilation>
+</predicate>
+<predicate>
+<name><![CDATA[bestf/3]]></name>
+<scope>private</scope>
+<compilation>static</compilation>
+</predicate>
+<predicate>
+<name><![CDATA[continue/11]]></name>
+<scope>private</scope>
+<compilation>static</compilation>
+</predicate>
+<predicate>
+<name><![CDATA[f/2]]></name>
+<scope>private</scope>
+<compilation>static</compilation>
+</predicate>
+<predicate>
+<name><![CDATA[insert/4]]></name>
+<scope>private</scope>
+<compilation>static</compilation>
+</predicate>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[list]]></name>
+<type>object</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[List predicates.]]></comment>
+<author><![CDATA[Paulo Moura]]></author>
+<version>2.2</version>
+<date>2011/5/14</date>
+</entity>
+<relations>
+<implements>
+<name><![CDATA[listp]]></name>
+<scope>public</scope>
+<file><![CDATA[listp_0]]></file>
+</implements>
+<extends>
+<name><![CDATA[compound]]></name>
+<scope>public</scope>
+<file><![CDATA[compound_0]]></file>
+</extends>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[as_difflist/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[as_difflist(+list,-list)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Converts a list to a difference list.]]></comment>
+<template><![CDATA[as_difflist(List,Diffist)]]></template>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[class_hierarchyp]]></name>
+<type>protocol</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[Class hierarchy protocol.]]></comment>
+<author><![CDATA[Paulo Moura]]></author>
+<version>1.0</version>
+<date>2000/7/24</date>
+</entity>
+<relations>
+<extends>
+<name><![CDATA[hierarchyp]]></name>
+<scope>public</scope>
+<file><![CDATA[hierarchyp_0]]></file>
+</extends>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[class/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[class(?object)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Returns, by backtracking, all object classes.]]></comment>
+<template><![CDATA[class(Class)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[classes/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[classes(-list)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[List of all object classes.]]></comment>
+<template><![CDATA[classes(Classes)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[instance/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[instance(?object)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Returns, by backtracking, all class instances.]]></comment>
+<template><![CDATA[instance(Instance)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[instances/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[instances(-list)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[List of all class instances.]]></comment>
+<template><![CDATA[instances(Instances)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[subclass/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[subclass(?object)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Returns, by backtracking, all class subclasses.]]></comment>
+<template><![CDATA[subclass(Subclass)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[subclasses/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[subclasses(-list)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[List of all class subclasses.]]></comment>
+<template><![CDATA[subclasses(Subclasses)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[superclass/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[superclass(?object)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Returns, by backtracking, all class superclasses.]]></comment>
+<template><![CDATA[superclass(Superclass)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[superclasses/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[superclasses(-list)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[List of all class superclasses.]]></comment>
+<template><![CDATA[superclasses(Superclasses)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[leaf_instance/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[leaf_instance(?object)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Returns, by backtracking, all class leaf instances.]]></comment>
+<template><![CDATA[leaf_instance(Leaf)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[leaf_instances/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[leaf_instances(-list)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[List of all class leaf instances.]]></comment>
+<template><![CDATA[leaf_instances(Leaves)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[leaf_class/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[leaf_class(?object)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Returns, by backtracking, all class leaf subclasses.]]></comment>
+<template><![CDATA[leaf_class(Leaf)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[leaf_classes/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[leaf_classes(-list)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[List of all class leaf leaf subclasses.]]></comment>
+<template><![CDATA[leaf_classes(Leaves)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[descendant_instance/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[descendant_instance(?object)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Returns, by backtracking, all class descendant instances.]]></comment>
+<template><![CDATA[descendant_instance(Descendant)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[descendant_instances/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[descendant_instances(-list)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[List of all class descendant instances.]]></comment>
+<template><![CDATA[descendant_instances(Descendants)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[descendant_class/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[descendant_class(?object)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Returns, by backtracking, all class descendant subclasses.]]></comment>
+<template><![CDATA[descendant_class(Descendant)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[descendant_classes/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[descendant_classes(-list)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[List of all class descendant subclasses.]]></comment>
+<template><![CDATA[descendant_classes(Descendants)]]></template>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

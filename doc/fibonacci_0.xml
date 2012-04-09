@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[fibonacci]]></name>
+<type>object</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[Computation of Fibonacci numbers using a fold left meta-predicate.]]></comment>
+<author><![CDATA[Paulo Moura]]></author>
+<version>1.0</version>
+<date>2010/12/19</date>
+</entity>
+<relations>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[nth/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[nth(+integer,-integer)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Calculates the Nth Fibonacci number.]]></comment>
+<template><![CDATA[nth(Nth,Number)]]></template>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

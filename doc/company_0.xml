@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[company]]></name>
+<type>object</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[Example of using the map_reduce/5 meta-predicate.]]></comment>
+<author><![CDATA[Ralf Lammel; adapted to Logtalk by Paulo Moura.]]></author>
+<version>1.0</version>
+<date>2010/12/20</date>
+<info>
+<key>source</key>
+<value><![CDATA[Example adapted from the paper "Scrap Your Boilerplate-Prologically!", PPDP 2009 Invited Talk.]]></value>
+</info>
+</entity>
+<relations>
+<uses>
+<name><![CDATA[meta]]></name>
+<file><![CDATA[meta_0]]></file>
+</uses>
+<uses>
+<name><![CDATA[integer]]></name>
+<file><![CDATA[integer_0]]></file>
+</uses>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[company/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+</predicate>
+<predicate>
+<name><![CDATA[get_salary/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+</predicate>
+<predicate>
+<name><![CDATA[cut_salary/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

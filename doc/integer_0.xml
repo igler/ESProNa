@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[integer]]></name>
+<type>object</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[Integer data type predicates.]]></comment>
+<author><![CDATA[Paulo Moura]]></author>
+<version>1.5</version>
+<date>2009/7/6</date>
+</entity>
+<relations>
+<extends>
+<name><![CDATA[number]]></name>
+<scope>public</scope>
+<file><![CDATA[number_0]]></file>
+</extends>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[between/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[between(+integer,+integer,+integer)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<mode>
+<template><![CDATA[between(+integer,+integer,-integer)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Returns integers in the interval defined by the two first arguments.]]></comment>
+<template><![CDATA[between(Lower,Upper,Integer)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[plus/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[plus(+integer,+integer,?integer)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<mode>
+<template><![CDATA[plus(+integer,?integer,+integer)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<mode>
+<template><![CDATA[plus(?integer,+integer,+integer)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Reversible integer sum. At least two of the arguments must be instantiated to integers.]]></comment>
+<template><![CDATA[plus(I,J,Sum)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[succ/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[succ(+integer,?integer)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<mode>
+<template><![CDATA[succ(?integer,+integer)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+</predicate>
+<predicate>
+<name><![CDATA[sequence/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[sequence(+integer,+integer,-list(integer))]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Generates a list with the sequence of all integers in the interval [Inf, Sup], assuming Inf =< Sup.]]></comment>
+<template><![CDATA[sequence(Inf,Sup,List)]]></template>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[classp]]></name>
+<type>protocol</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[Default protocol for all instantiable classes.]]></comment>
+<author><![CDATA[Paulo Moura]]></author>
+<version>1.0</version>
+<date>2000/7/24</date>
+</entity>
+<relations>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[new/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[new(?object)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Creates a new instance.]]></comment>
+<template><![CDATA[new(Instance)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[new/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[new(?object,+list)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Creates a new instance using a list of initialization options.]]></comment>
+<template><![CDATA[new(Instance,Options)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[clone/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[clone(+object,?object)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Clones an instance.]]></comment>
+<template><![CDATA[clone(Instance,Clone)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[instance_base_name/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[instance_base_name(-atom)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Base name to generated new instance names.]]></comment>
+<template><![CDATA[instance_base_name(Name)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[delete/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[delete(+object)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Deletes a dynamic instance.]]></comment>
+<template><![CDATA[delete(Instance)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[delete/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[delete(+object,+list)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Deletes a dynamic instance using a list of deleting options.]]></comment>
+<template><![CDATA[delete(Instance,Options)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[delete_all/0]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[delete_all]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Deletes all dynamic instances. Fails if some dynamic instance can not be deleted.]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[delete_all/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[delete_all(+list)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Deletes all dynamic instances using a list of deleting options. Fails if some dynamic instance can not be deleted.]]></comment>
+<template><![CDATA[delete_all(Options)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[equals/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[equals(+object,+object)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[The two instances represents the same object for some definition of equality.]]></comment>
+<template><![CDATA[equals(Instance1,Instance2)]]></template>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

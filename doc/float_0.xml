@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[float]]></name>
+<type>object</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[Floating point numbers data type predicates.]]></comment>
+<author><![CDATA[Paulo Moura]]></author>
+<version>1.1</version>
+<date>2009/3/6</date>
+</entity>
+<relations>
+<extends>
+<name><![CDATA[number]]></name>
+<scope>public</scope>
+<file><![CDATA[number_0]]></file>
+</extends>
+</relations>
+<predicates>
+<public>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

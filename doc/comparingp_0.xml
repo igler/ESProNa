@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[comparingp]]></name>
+<type>protocol</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[Comparing protocol using overloading of standard operators.]]></comment>
+<author><![CDATA[Paulo Moura]]></author>
+<version>1.0</version>
+<date>2000/7/24</date>
+</entity>
+<relations>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[(<)/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[+term< +term]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if Term1 is less than Term2.]]></comment>
+<template><![CDATA[Term1<Term2]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[(=<)/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[+term=< +term]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if Term1 is less or equal than Term2.]]></comment>
+<template><![CDATA[Term1=<Term2]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[(>)/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[+term> +term]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if Term1 is greater than Term2.]]></comment>
+<template><![CDATA[Term1>Term2]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[(>=)/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[+term>= +term]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if Term1 is equal or grater than Term2.]]></comment>
+<template><![CDATA[Term1>=Term2]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[(=:=)/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[+term=:= +term]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if Term1 is equal to Term2.]]></comment>
+<template><![CDATA[Term1=:=Term2]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[(=\=)/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[+term=\= +term]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if Term1 is not equal to Term2.]]></comment>
+<template><![CDATA[Term1=\=Term2]]></template>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

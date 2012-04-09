@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[model_state(A,B)]]></name>
+<type>object</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[Represents the state of the process model.]]></comment>
+<author><![CDATA[Michael Igler (michael.igler@uni-bayreuth.de)]]></author>
+<version>0.8</version>
+<date>2010/4/19</date>
+</entity>
+<relations>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[generate_initial_model_state/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[generate_initial_model_state(+process_model,?model_state)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Generates the initial ModelState.]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[generate_goal_model_state/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[generate_goal_model_state(+process_model,?model_state)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Generates the goal ModelState.]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[update_model_state/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[update_model_state(?process_identifier,+compound_term(concept_identifiers),?model_state)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Updates the ProcessState of a certain process. A new HistoryList of that process is calculated.]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[get_process_state/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[get_process_state(?process_identifier,?process_state)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+</predicate>
+<predicate>
+<name><![CDATA[model_state_changes/7]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[model_state_changes(+state,?process_identifier,?instance_identifier,?action,?agents,?data,?tools)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Retrieves elements that have changed between two different model states.]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[print/0]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[print]]></template>
+<solutions>one</solutions>
+</mode>
+<mode>
+<template><![CDATA[print]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Prints some informations about the model state.]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[print/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<comment><![CDATA[Prints some informations about the model state into a stream.]]></comment>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

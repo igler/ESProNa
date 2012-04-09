@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[initialization]]></name>
+<type>category</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[Object initialization protocol.]]></comment>
+<author><![CDATA[Paulo Moura]]></author>
+<version>1.11</version>
+<date>2008/10/10</date>
+</entity>
+<relations>
+<uses>
+<name><![CDATA[list]]></name>
+<file><![CDATA[list_0]]></file>
+</uses>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[init/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[init(+list)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Intialize an object with the given list of options.]]></comment>
+<template><![CDATA[init(Options)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[valid_init_option/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[valid_init_option(+nonvar)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the argument is a valid initialization option.]]></comment>
+<template><![CDATA[valid_init_option(Option)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[valid_init_options/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[valid_init_options(+list)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the argument is list of valid initialization options.]]></comment>
+<template><![CDATA[valid_init_options(Options)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[default_init_options/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[default_init_options(+list)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[List of default initilization options.]]></comment>
+<template><![CDATA[default_init_options(Options)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[default_init_option/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[default_init_option(?nonvar)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Default initilization option.]]></comment>
+<template><![CDATA[default_init_option(Option)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[free/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[free(+list)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Release an object with the given list of options.]]></comment>
+<template><![CDATA[free(Options)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[valid_free_option/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[valid_free_option(+nonvar)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+</predicate>
+<predicate>
+<name><![CDATA[valid_free_options/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[valid_free_options(+list)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the argument is list of valid delete options.]]></comment>
+<template><![CDATA[valid_free_options(Options)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[default_free_options/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[default_free_options(+list)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[List of default delete options.]]></comment>
+<template><![CDATA[default_free_options(Options)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[default_free_option/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[default_free_option(?nonvar)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Default delete option.]]></comment>
+<template><![CDATA[default_free_option(Option)]]></template>
+</predicate>
+</public>
+<protected>
+<predicate>
+<name><![CDATA[process_init_option/1]]></name>
+<scope>protected</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[process_init_option(?nonvar)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Process initilization option.]]></comment>
+<template><![CDATA[process_init_option(Option)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[process_free_option/1]]></name>
+<scope>protected</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[process_free_option(?nonvar)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Process delete option.]]></comment>
+<template><![CDATA[process_free_option(Option)]]></template>
+</predicate>
+</protected>
+<private>
+<predicate>
+<name><![CDATA[process_init_options/1]]></name>
+<scope>private</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[process_init_options(+list)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Process a list of initilization options.]]></comment>
+<template><![CDATA[process_init_options(Options)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[process_free_options/1]]></name>
+<scope>private</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[process_free_options(+list)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Process a list of delete options.]]></comment>
+<template><![CDATA[process_free_options(Options)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[merge_options/3]]></name>
+<scope>private</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[merge_options(+list,+list,-list)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Constructs a complete list of options complementing the explicit options with the default ones.]]></comment>
+<template><![CDATA[merge_options(Options,Defaults,Result)]]></template>
+</predicate>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[rbtree]]></name>
+<type>object</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[Red-Black trees. Uses standard order to compare keys.]]></comment>
+<author><![CDATA[Vitor Santos Costa; adapted to Logtalk by Paulo Moura.]]></author>
+<version>1.01</version>
+<date>2010/5/8</date>
+</entity>
+<relations>
+<implements>
+<name><![CDATA[dictionaryp]]></name>
+<scope>public</scope>
+<file><![CDATA[dictionaryp_0]]></file>
+</implements>
+<extends>
+<name><![CDATA[compound]]></name>
+<scope>public</scope>
+<file><![CDATA[compound_0]]></file>
+</extends>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[partial_map/4]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<meta><![CDATA[partial_map(*,*,2,*)]]></meta>
+<mode>
+<template><![CDATA[partial_map(+tree,+list,@closure,-tree)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Applies a closure to the tree pairs identified by a set of keys.]]></comment>
+<template><![CDATA[partial_map(Tree,Keys,Closure,NewTree)]]></template>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

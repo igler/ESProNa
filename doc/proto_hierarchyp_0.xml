@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[proto_hierarchyp]]></name>
+<type>protocol</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[Prototype hierarchy protocol.]]></comment>
+<author><![CDATA[Paulo Moura]]></author>
+<version>1.1</version>
+<date>2006/2/20</date>
+</entity>
+<relations>
+<extends>
+<name><![CDATA[hierarchyp]]></name>
+<scope>public</scope>
+<file><![CDATA[hierarchyp_0]]></file>
+</extends>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[parent/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[parent(?object)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Returns, by backtracking, all object parents.]]></comment>
+<template><![CDATA[parent(Parent)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[parents/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[parents(-list)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[List of all object parents.]]></comment>
+<template><![CDATA[parents(Parents)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[extension/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[extension(?object)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Returns, by backtracking, all object direct descendants.]]></comment>
+<template><![CDATA[extension(Extension)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[extensions/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[extensions(-list)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[List of all object direct descendants.]]></comment>
+<template><![CDATA[extensions(Extensions)]]></template>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

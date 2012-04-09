@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[bintree]]></name>
+<type>object</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[Simple binary tree implementation of the dictionary protocol. Uses standard order to compare keys.]]></comment>
+<author><![CDATA[Paulo Moura and Paul Fodor]]></author>
+<version>2.1</version>
+<date>2010/4/2</date>
+</entity>
+<relations>
+<implements>
+<name><![CDATA[dictionaryp]]></name>
+<scope>public</scope>
+<file><![CDATA[dictionaryp_0]]></file>
+</implements>
+<extends>
+<name><![CDATA[compound]]></name>
+<scope>public</scope>
+<file><![CDATA[compound_0]]></file>
+</extends>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[preorder/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[preorder(@tree,-list)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Preorder tree traversal.]]></comment>
+<template><![CDATA[preorder(Tree,List)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[inorder/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[inorder(@tree,-list)]]></template>
+<solutions>one</solutions>
+</mode>
+</predicate>
+<predicate>
+<name><![CDATA[postorder/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[postorder(@tree,-list)]]></template>
+<solutions>one</solutions>
+</mode>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

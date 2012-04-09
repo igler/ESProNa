@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[esprona_hill_climbing(Threshold)]]></name>
+<type>object</type>
+<compilation>static, context_switching_calls, events</compilation>
+<comment><![CDATA[Hill climbing heuristic state space search strategy.]]></comment>
+<author><![CDATA[Written by Paulo Moura, adopted to ESProNa by Michael Igler]]></author>
+<version>1.2</version>
+<date>2009/12/3</date>
+</entity>
+<relations>
+<instantiates>
+<name><![CDATA[esprona_heuristic_search(Threshold)]]></name>
+<scope>public</scope>
+<file><![CDATA[esprona_heuristic_search_1]]></file>
+</instantiates>
+<uses>
+<name><![CDATA[list]]></name>
+<file><![CDATA[list_0]]></file>
+</uses>
+</relations>
+<predicates>
+<public>
+</public>
+<protected>
+</protected>
+<private>
+<predicate>
+<name><![CDATA[hill/9]]></name>
+<scope>private</scope>
+<compilation>static</compilation>
+</predicate>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

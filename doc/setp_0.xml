@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[setp]]></name>
+<type>protocol</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[Set protocol.]]></comment>
+<author><![CDATA[Paulo Moura]]></author>
+<version>1.3</version>
+<date>2011/2/16</date>
+</entity>
+<relations>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[delete/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[delete(+set,@term,?set)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Deletes an element from a set returning the set of remaining elements.]]></comment>
+<template><![CDATA[delete(Set,Element,Remaining)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[disjoint/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[disjoint(+set,+set)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the two sets have no element in common.]]></comment>
+<template><![CDATA[disjoint(Set1,Set2)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[equal/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[equal(+set,+set)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the two sets are equal.]]></comment>
+<template><![CDATA[equal(Set1,Set2)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[empty/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[empty(+set)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the set is empty.]]></comment>
+<template><![CDATA[empty(Set)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[insert/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[insert(+set,+term,?set)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Inserts an element in a set, returning the resulting set.]]></comment>
+<template><![CDATA[insert(In,Element,Out)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[insert_all/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[insert_all(+list,+set,?set)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Inserts a list of elements in a set, returning the resulting set.]]></comment>
+<template><![CDATA[insert_all(List,In,Out)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[intersect/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[intersect(+set,+set)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the two sets have at least one element in common.]]></comment>
+<template><![CDATA[intersect(Set1,Set2)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[intersection/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[intersection(+set,+set,?set)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Returns the intersection of Set1 and Set2.]]></comment>
+<template><![CDATA[intersection(Set1,Set2,Intersection)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[intersection/4]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[intersection(+set,+set,?set,?set)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if Intersection is the intersection of Set1 and Set2 and Difference is the difference between Set2 and Set1.]]></comment>
+<template><![CDATA[intersection(Set1,Set2,Intersection,Difference)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[length/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[length(+set,?integer)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Number of set elements.]]></comment>
+<template><![CDATA[length(Set,Length)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[member/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[member(+term,+set)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<mode>
+<template><![CDATA[member(-term,+set)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Element is a member of set Set.]]></comment>
+<template><![CDATA[member(Element,Set)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[memberchk/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[memberchk(+term,+set)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Checks if a term is a member of a set.]]></comment>
+<template><![CDATA[memberchk(Element,Set)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[powerset/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[powerset(+set,-list)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Returns the power set of a set, represented as a list of sets.]]></comment>
+<template><![CDATA[powerset(Set,Powerset)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[product/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[product(+set,+set,-set)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Returns the cartesian product of two sets.]]></comment>
+<template><![CDATA[product(Set1,Set2,Product)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[select/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[select(?term,+set,?set)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Selects an element from a set, returning the set of remaining elements.]]></comment>
+<template><![CDATA[select(Element,Set,Remaining)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[selectchk/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[selectchk(?term,+set,?set)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Checks that an element can be selected from a set, returning the set of remaining elements.]]></comment>
+<template><![CDATA[selectchk(Element,Set,Remaining)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[subset/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[subset(+set,+set)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if Subset is a subset of Set.]]></comment>
+<template><![CDATA[subset(Subset,Set)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[subtract/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[subtract(+set,+set,?set)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True when Difference contains all and only the elements of Set1 which are not also in Set2.]]></comment>
+<template><![CDATA[subtract(Set1,Set2,Difference)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[symdiff/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[symdiff(+set,+set,?set)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if Difference is the symmetric difference of Set1 and Set2.]]></comment>
+<template><![CDATA[symdiff(Set1,Set2,Difference)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[union/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[union(+set,+set,?set)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if Union is the union of Set1 and Set2.]]></comment>
+<template><![CDATA[union(Set1,Set2,Union)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[union/4]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[union(+set,+set,?set,?set)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if Union is the union of Set1 and Set2 and Difference is the difference between Set2 and Set1.]]></comment>
+<template><![CDATA[union(Set1,Set2,Union,Difference)]]></template>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[heuristic_state_space]]></name>
+<type>object</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[Heuristic state space description predicates including navigation.]]></comment>
+<author><![CDATA[Written by Paulo Moura, adopted to ESProNa by Michael Igler]]></author>
+<version>1.1</version>
+<date>2011/3/20</date>
+</entity>
+<relations>
+<instantiates>
+<name><![CDATA[class]]></name>
+<scope>public</scope>
+<file><![CDATA[class_0]]></file>
+</instantiates>
+<specializes>
+<name><![CDATA[state_space]]></name>
+<scope>public</scope>
+<file><![CDATA[state_space_0]]></file>
+</specializes>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[next_state/4]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[next_state(+process_model,+nonvar,-nonvar,-number)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Generates a state sucessor.]]></comment>
+<template><![CDATA[next_state(ProcessModelID,State,Next,Cost)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[heuristic/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[heuristic(+nonvar,-number)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Estimates state distance to a goal state.]]></comment>
+<template><![CDATA[heuristic(State,Estimate)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[navigate/6]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[navigate(+process_model,+list(state),?list(state),?list(path),?var(costs),+term(conditions))]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[...]]></comment>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

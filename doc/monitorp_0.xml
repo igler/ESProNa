@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[monitorp]]></name>
+<type>protocol</type>
+<compilation>static, context_switching_calls, events</compilation>
+<comment><![CDATA[Monitor protocol.]]></comment>
+<author><![CDATA[Paulo Moura]]></author>
+<version>1.0</version>
+<date>2000/7/24</date>
+</entity>
+<relations>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[monitor_activated/0]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[monitor_activated]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if monitor is currently active.]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[activate_monitor/0]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[activate_monitor]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Activates all spy points and start monitoring.]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[suspend_monitor/0]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[suspend_monitor]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Suspends monitoring, deactivating all spy points.]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[reset_monitor/0]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[reset_monitor]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Resets monitor, deactivating and deleting all spy points.]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[spy_point/4]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[spy_point(?event,?object,?callable,?object)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Current spy point.]]></comment>
+<template><![CDATA[spy_point(Event,Object,Message,Sender)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[set_spy_point/4]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[set_spy_point(?event,?object,?callable,?object)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Sets a spy point.]]></comment>
+<template><![CDATA[set_spy_point(Event,Object,Message,Sender)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[del_spy_points/4]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[del_spy_points(@event,@object,@callable,@object)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Deletes all matching spy points.]]></comment>
+<template><![CDATA[del_spy_points(Event,Object,Message,Sender)]]></template>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

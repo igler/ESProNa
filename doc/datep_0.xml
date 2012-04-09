@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[datep]]></name>
+<type>protocol</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[Date protocol.]]></comment>
+<author><![CDATA[Paulo Moura]]></author>
+<version>1.1</version>
+<date>2005/3/17</date>
+</entity>
+<relations>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[today/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[today(-integer,-integer,-integer)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Returns current date.]]></comment>
+<template><![CDATA[today(Year,Month,Day)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[leap_year/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[leap_year(+integer)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the argument is a leap year.]]></comment>
+<template><![CDATA[leap_year(Year)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[name_of_day/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[name_of_day(?integer,?atom,?atom)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Name and short name of day.]]></comment>
+<template><![CDATA[name_of_day(Index,Name,Short)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[name_of_month/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[name_of_month(?integer,?atom,?atom)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Name and short name of month.]]></comment>
+<template><![CDATA[name_of_month(Index,Name,Short)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[days_in_month/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[days_in_month(?integer,+integer,?integer)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Number of days in a month.]]></comment>
+<template><![CDATA[days_in_month(Month,Year,Days)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[valid/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[valid(@integer,@integer,@integer)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the arguments represent a valid date.]]></comment>
+<template><![CDATA[valid(Year,Month,Day)]]></template>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

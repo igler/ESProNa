@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[event_registryp]]></name>
+<type>protocol</type>
+<compilation>static, context_switching_calls, events</compilation>
+<comment><![CDATA[Event registry protocol.]]></comment>
+<author><![CDATA[Paulo Moura]]></author>
+<version>1.1</version>
+<date>2009/10/8</date>
+</entity>
+<relations>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[monitors/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[monitors(-list(object_identifier))]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Returns a list of all current monitors.]]></comment>
+<template><![CDATA[monitors(Monitors)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[monitor/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[monitor(-object_identifier)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<mode>
+<template><![CDATA[monitor(+object_identifier)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Monitor is an object playing the role of a monitor.]]></comment>
+<template><![CDATA[monitor(Monitor)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[monitored/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[monitored(-list(object_identifier))]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Returns a list of all currently monitored objects.]]></comment>
+<template><![CDATA[monitored(Objects)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[monitor/4]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[monitor(?object_identifier,?nonvar,?object_identifier,?object_identifier)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[True if the arguments describe a currently defined monitored event.]]></comment>
+<template><![CDATA[monitor(Object,Message,Sender,Monitor)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[set_monitor/4]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[set_monitor(?object_identifier,?nonvar,?object_identifier,+object_identifier)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Sets a monitor for the set of matching events.]]></comment>
+<template><![CDATA[set_monitor(Object,Message,Sender,Monitor)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[del_monitors/4]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[del_monitors(?object_identifier,?nonvar,?object_identifier,?object_identifier)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Deletes all matching monitored events.]]></comment>
+<template><![CDATA[del_monitors(Object,Message,Sender,Monitor)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[del_monitors/0]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[del_monitors]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Deletes all monitored events.]]></comment>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

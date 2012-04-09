@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[behavioral_constraint]]></name>
+<type>category</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[This perspective is conform when the given behavioral constraints evaluate to true.]]></comment>
+<author><![CDATA[Michael Igler (michael.igler@uni-bayreuth.de)]]></author>
+<version>0.8</version>
+<date>2009/10/15</date>
+</entity>
+<relations>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[behavioral_constraint/4]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[behavioral_constraint(+list(actions),+modelstate,-instance_identifier,+callable)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+</predicate>
+<predicate>
+<name><![CDATA[behavioral_constraint/5]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[behavioral_constraint(+modal_prefix,+list(actions),+modelstate,-instance_identifier,+callable)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Contains the POPM constraints of the behavioral perspective.]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[behavioral_constraints_conform/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[behavioral_constraints_conform(+var(action),+modelstate,?instance_identifier)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[This predicate expects: instantiated Action(+var), 
+						 						instantiated ModelState(+list), 
+												instantiated Instance(+var).]]></comment>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

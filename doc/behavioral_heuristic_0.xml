@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[behavioral_heuristic]]></name>
+<type>object</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[Predicates for heuristic searching and planning algorithms of the behavioral perspective.]]></comment>
+<author><![CDATA[Michael Igler (michael.igler@uni-bayreuth.de)]]></author>
+<version>0.8</version>
+<date>2011/4/6</date>
+</entity>
+<relations>
+<implements>
+<name><![CDATA[heuristic_protocol]]></name>
+<scope>public</scope>
+<file><![CDATA[heuristic_protocol_0]]></file>
+</implements>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[set_up_graph/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[set_up_graph(+var(action),-graph)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Sets up a graph representing the dependencies between the different processes.]]></comment>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

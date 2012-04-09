@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[heapp]]></name>
+<type>protocol</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[Heap protocol.]]></comment>
+<author><![CDATA[Richard O'Keefe; adapted to Logtalk by Paulo Moura and Victor Lagerkvist.]]></author>
+<version>1.01</version>
+<date>2010/11/13</date>
+</entity>
+<relations>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[insert/4]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[insert(+key,+value,+heap,-heap)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Inserts the new Key-Value pair into a heap, returning the updated heap.]]></comment>
+<template><![CDATA[insert(Key,Value,Heap,NewHeap)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[insert_all/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[insert_all(@list(pairs),+heap,-heap)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Inserts a list of Key-Value pairs into a heap, returning the updated heap.]]></comment>
+<template><![CDATA[insert_all(List,Heap,NewHeap)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[delete/4]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[delete(+heap,?key,?value,-heap)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Deletes and returns the top Key-Value pair in OldHeap and the resulting NewHeap.]]></comment>
+<template><![CDATA[delete(Heap,Key,Value,NewHeap)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[merge/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[merge(+heap,+heap,-heap)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Merges two heaps.]]></comment>
+<template><![CDATA[merge(Heap1,Heap2,NewHeap)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[empty/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[empty(@heap)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the heap is empty.]]></comment>
+<template><![CDATA[empty(Heap)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[size/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[size(+heap,?integer)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Returns the number of heap elements.]]></comment>
+<template><![CDATA[size(Heap,Size)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[as_list/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[as_list(+heap,-list)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Returns the current set of Key-Value pairs in the Heap as a List, sorted into ascending order of Keys.]]></comment>
+<template><![CDATA[as_list(Heap,List)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[as_heap/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[as_heap(+list,-heap)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Constructs a Heap from a list of Key-Value pairs.]]></comment>
+<template><![CDATA[as_heap(List,Heap)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[top/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[top(+heap,?key,?value)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Returns the top Key-Value pair in Heap. Fails if the heap is empty.]]></comment>
+<template><![CDATA[top(Heap,Key,Value)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[top_next/5]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[top_next(+heap,?key,?value,?key,?value)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Returns the top pair, Key1-Value1, and the next pair, Key2-Value2, in Heap. Fails if the heap does not have at least two elements.]]></comment>
+<template><![CDATA[top_next(Heap,Key1,Value1,Key2,Value2)]]></template>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

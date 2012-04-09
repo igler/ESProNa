@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[characterp]]></name>
+<type>protocol</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[Character protocol.]]></comment>
+<author><![CDATA[Paulo Moura]]></author>
+<version>1.2</version>
+<date>2011/2/19</date>
+</entity>
+<relations>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[is_ascii/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[is_ascii(+char)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the argument is an ASCII character.]]></comment>
+<template><![CDATA[is_ascii(Char)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[is_alphanumeric/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[is_alphanumeric(+char)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the argument is an alphanumeric character.]]></comment>
+<template><![CDATA[is_alphanumeric(Char)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[is_alpha/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[is_alpha(+char)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the argument is a letter or an underscore.]]></comment>
+<template><![CDATA[is_alpha(Char)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[is_letter/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[is_letter(+char)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the argument is a letter.]]></comment>
+<template><![CDATA[is_letter(Char)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[is_bin_digit/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[is_bin_digit(+char)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the argument is a binary digit.]]></comment>
+<template><![CDATA[is_bin_digit(Char)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[is_octal_digit/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[is_octal_digit(+char)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the argument is an octal digit.]]></comment>
+<template><![CDATA[is_octal_digit(Char)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[is_dec_digit/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[is_dec_digit(+char)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the argument is a decimal digit.]]></comment>
+<template><![CDATA[is_dec_digit(Char)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[is_hex_digit/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[is_hex_digit(+char)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the argument is an hexadecimal digit.]]></comment>
+<template><![CDATA[is_hex_digit(Char)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[is_lower_case/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[is_lower_case(+char)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the argument is a lower case letter.]]></comment>
+<template><![CDATA[is_lower_case(Char)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[is_upper_case/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[is_upper_case(+char)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the argument is a upper case letter.]]></comment>
+<template><![CDATA[is_upper_case(Char)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[is_vowel/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[is_vowel(+char)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the argument is a vowel.]]></comment>
+<template><![CDATA[is_vowel(Char)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[is_white_space/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[is_white_space(+char)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the argument is a white space character (a space or a tab) inside a line of characters.]]></comment>
+<template><![CDATA[is_white_space(Char)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[is_layout/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[is_layout(+char)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the argument is a layout character.]]></comment>
+<template><![CDATA[is_layout(Char)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[is_quote/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[is_quote(+char)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the argument is a quote character.]]></comment>
+<template><![CDATA[is_quote(Char)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[is_punctation/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[is_punctation(+char)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the argument is a sentence punctation character.]]></comment>
+<template><![CDATA[is_punctation(Char)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[is_period/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[is_period(+char)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the argument is a character that ends a sentence.]]></comment>
+<template><![CDATA[is_period(Char)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[is_control/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[is_control(+char)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the argument is an ASCII control character.]]></comment>
+<template><![CDATA[is_control(Char)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[is_newline/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[is_newline(+char)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the argument is the ASCII newline character.]]></comment>
+<template><![CDATA[is_newline(Char)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[is_end_of_line/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[is_end_of_line(+char)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the argument is the ASCII end-of-line character (either a carriage return or a line feed).]]></comment>
+<template><![CDATA[is_end_of_line(Char)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[parenthesis/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[parenthesis(?char,?char)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<mode>
+<template><![CDATA[parenthesis(+char,?char)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<mode>
+<template><![CDATA[parenthesis(?char,+char)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Recognises and converts between open and close parenthesis.]]></comment>
+<template><![CDATA[parenthesis(Char1,Char2)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[lower_upper/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[lower_upper(?char,?char)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<mode>
+<template><![CDATA[lower_upper(+char,?char)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<mode>
+<template><![CDATA[lower_upper(?char,+char)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Recognises and converts between lower and upper case letters.]]></comment>
+<template><![CDATA[lower_upper(Char1,Char2)]]></template>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

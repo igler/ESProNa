@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[timep]]></name>
+<type>protocol</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[Time protocol.]]></comment>
+<author><![CDATA[Paulo Moura]]></author>
+<version>1.0</version>
+<date>2000/7/24</date>
+</entity>
+<relations>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[now/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[now(-integer,-integer,-integer)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Returns current time.]]></comment>
+<template><![CDATA[now(Hours,Mins,Secs)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[cpu_time/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[cpu_time(-number)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Returns the current cpu time.]]></comment>
+<template><![CDATA[cpu_time(Time)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[valid/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[valid(+integer,+integer,+integer)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the arguments represent a valid time value.]]></comment>
+<template><![CDATA[valid(Hours,Mins,Secs)]]></template>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

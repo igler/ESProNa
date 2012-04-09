@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[set(Type)]]></name>
+<type>object</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[Set predicates with elements constrained to a single type.]]></comment>
+<author><![CDATA[Paulo Moura]]></author>
+<version>1.21</version>
+<date>2010/2/10</date>
+</entity>
+<relations>
+<extends>
+<name><![CDATA[set]]></name>
+<scope>public</scope>
+<file><![CDATA[set_0]]></file>
+</extends>
+</relations>
+<predicates>
+<public>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

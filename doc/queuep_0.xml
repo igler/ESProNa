@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[queuep]]></name>
+<type>protocol</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[Queue protocol.]]></comment>
+<author><![CDATA[Paulo Moura]]></author>
+<version>1.0</version>
+<date>2000/7/24</date>
+</entity>
+<relations>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[empty/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[empty(@queue)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the queue is empty.]]></comment>
+<template><![CDATA[empty(Queue)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[head/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[head(+queue,?term)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Unifies Head with the first element of the queue.]]></comment>
+<template><![CDATA[head(Queue,Head)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[join/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[join(@term,+queue,-queue)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Adds the new element at the end of the queue.]]></comment>
+<template><![CDATA[join(Element,Queue_in,Queue_out)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[join_all/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[join_all(+list,+queue,-queue)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Adds the new elements at the end of the queue.  The elements are added in the same order that they appear in the list.]]></comment>
+<template><![CDATA[join_all(List,Queue_in,Queue_out)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[jump/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[jump(@term,+queue,-queue)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Adds the new element at the front of the queue.]]></comment>
+<template><![CDATA[jump(Element,Queue_in,Queue_out)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[jump_all/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[jump_all(+list,+queue,-queue)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Adds the new elements at the front of the queue.  The elements are added in the same order that they appear in the list.]]></comment>
+<template><![CDATA[jump_all(Element,Queue_in,Queue_out)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[length/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[length(+queue,?integer)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Queue length.]]></comment>
+<template><![CDATA[length(Queue,Length)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[serve/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[serve(+queue,?term,-queue)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Removes the first element of the queue for service.]]></comment>
+<template><![CDATA[serve(Queue_in,Head,Queue_out)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[as_list/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[as_list(+queue,-list)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Converts a queue to a list.]]></comment>
+<template><![CDATA[as_list(Queue,List)]]></template>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

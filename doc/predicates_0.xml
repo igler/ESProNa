@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[predicates]]></name>
+<type>object</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[Some predicates for testing the library meta-predicates.]]></comment>
+<author><![CDATA[Paul Crocker]]></author>
+<version>1.0</version>
+<date>2008/11/19</date>
+</entity>
+<relations>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[tuple/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+</predicate>
+<predicate>
+<name><![CDATA[sum/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+</predicate>
+<predicate>
+<name><![CDATA[product/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

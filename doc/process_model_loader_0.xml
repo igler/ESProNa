@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[process_model_loader]]></name>
+<type>object</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[The process_model object loads and unloads process model definitions]]></comment>
+<author><![CDATA[Michael Igler (michael.igler@uni-bayreuth.de)]]></author>
+<version>0.7</version>
+<date>2010/6/9</date>
+</entity>
+<relations>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[load/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[load(+var(file))]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Loading and instatiating process objects defined in a file.]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[unload/0]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[unload]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Unloading all process objects.]]></comment>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

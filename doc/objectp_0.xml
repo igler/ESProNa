@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[objectp]]></name>
+<type>protocol</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[Default protocol for all objects.]]></comment>
+<author><![CDATA[Paulo Moura]]></author>
+<version>1.0</version>
+<date>2000/7/24</date>
+</entity>
+<relations>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[strict_instance/0]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[strict_instance]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the object is strictly an instance.]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[print/0]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[print]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Pretty prints an object description.]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[nil/0]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[nil]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the object represents a void reference.]]></comment>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

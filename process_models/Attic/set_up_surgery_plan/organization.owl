@@ -1,0 +1,412 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
+    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owlapi "http://www.semanticweb.org/owlapi#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY individuals "http://ai4.inf.uni-bayreuth.de/ontology/individuals#" >
+]>
+
+
+<rdf:RDF xmlns="http://ai4.inf.uni-bayreuth.de/ontology/organization#"
+     xml:base="http://ai4.inf.uni-bayreuth.de/ontology/organization"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owlapi="http://www.semanticweb.org/owlapi#"
+     xmlns:individuals="http://ai4.inf.uni-bayreuth.de/ontology/individuals#">
+    <owl:Ontology rdf:about="http://ai4.inf.uni-bayreuth.de/ontology/organization">
+        <owl:imports rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl"/>
+        <owl:imports rdf:resource="http://swrl.stanford.edu/ontologies/3.3/swrla.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&owlapi;nodeID"/>
+    <owl:AnnotationProperty rdf:about="&owlapi;iri"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ai4.inf.uni-bayreuth.de/ontology/organization#member -->
+
+    <owl:ObjectProperty rdf:about="http://ai4.inf.uni-bayreuth.de/ontology/organization#member">
+        <rdfs:domain rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/organization#Group"/>
+        <rdfs:range rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/organization#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ai4.inf.uni-bayreuth.de/ontology/organization#plays -->
+
+    <owl:ObjectProperty rdf:about="http://ai4.inf.uni-bayreuth.de/ontology/organization#plays">
+        <rdfs:domain rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/organization#Person"/>
+        <rdfs:range rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/organization#Role"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ai4.inf.uni-bayreuth.de/ontology/organization#supervises -->
+
+    <owl:ObjectProperty rdf:about="http://ai4.inf.uni-bayreuth.de/ontology/organization#supervises">
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/organization#Role"/>
+        <rdfs:range rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/organization#Role"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ai4.inf.uni-bayreuth.de/ontology/organization#supervisorOf -->
+
+    <owl:ObjectProperty rdf:about="http://ai4.inf.uni-bayreuth.de/ontology/organization#supervisorOf">
+        <rdfs:domain rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/organization#Person"/>
+        <rdfs:range rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/organization#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ai4.inf.uni-bayreuth.de/ontology/organization#Division -->
+
+    <owl:Class rdf:about="http://ai4.inf.uni-bayreuth.de/ontology/organization#Division">
+        <rdfs:subClassOf rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/organization#Group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ai4.inf.uni-bayreuth.de/ontology/organization#Group -->
+
+    <owl:Class rdf:about="http://ai4.inf.uni-bayreuth.de/ontology/organization#Group"/>
+    
+
+
+    <!-- http://ai4.inf.uni-bayreuth.de/ontology/organization#Person -->
+
+    <owl:Class rdf:about="http://ai4.inf.uni-bayreuth.de/ontology/organization#Person"/>
+    
+
+
+    <!-- http://ai4.inf.uni-bayreuth.de/ontology/organization#Role -->
+
+    <owl:Class rdf:about="http://ai4.inf.uni-bayreuth.de/ontology/organization#Role"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ai4.inf.uni-bayreuth.de/ontology/individuals#AssistantDoctor -->
+
+    <owl:NamedIndividual rdf:about="&individuals;AssistantDoctor">
+        <rdf:type rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/organization#Role"/>
+        <supervises rdf:resource="&individuals;MTA"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ai4.inf.uni-bayreuth.de/ontology/individuals#AssistantMedicalDirector -->
+
+    <owl:NamedIndividual rdf:about="&individuals;AssistantMedicalDirector">
+        <rdf:type rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/organization#Role"/>
+        <supervises rdf:resource="&individuals;AssistantDoctor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ai4.inf.uni-bayreuth.de/ontology/individuals#Cardiology -->
+
+    <owl:NamedIndividual rdf:about="&individuals;Cardiology">
+        <rdf:type rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/organization#Division"/>
+        <member rdf:resource="&individuals;Hugo"/>
+        <member rdf:resource="&individuals;Jack"/>
+        <member rdf:resource="&individuals;Jacob"/>
+        <member rdf:resource="&individuals;Kate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ai4.inf.uni-bayreuth.de/ontology/individuals#Charles -->
+
+    <owl:NamedIndividual rdf:about="&individuals;Charles">
+        <rdf:type rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/organization#Person"/>
+        <plays rdf:resource="&individuals;MedicalSuperintendent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ai4.inf.uni-bayreuth.de/ontology/individuals#Claire -->
+
+    <owl:NamedIndividual rdf:about="&individuals;Claire">
+        <rdf:type rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/organization#Person"/>
+        <plays rdf:resource="&individuals;MTA"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ai4.inf.uni-bayreuth.de/ontology/individuals#Hugo -->
+
+    <owl:NamedIndividual rdf:about="&individuals;Hugo">
+        <rdf:type rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/organization#Person"/>
+        <plays rdf:resource="&individuals;AssistantMedicalDirector"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ai4.inf.uni-bayreuth.de/ontology/individuals#Jack -->
+
+    <owl:NamedIndividual rdf:about="&individuals;Jack">
+        <rdf:type rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/organization#Person"/>
+        <plays rdf:resource="&individuals;AssistantDoctor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ai4.inf.uni-bayreuth.de/ontology/individuals#Jacob -->
+
+    <owl:NamedIndividual rdf:about="&individuals;Jacob">
+        <rdf:type rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/organization#Person"/>
+        <plays rdf:resource="&individuals;MedicalSuperintendent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ai4.inf.uni-bayreuth.de/ontology/individuals#John -->
+
+    <owl:NamedIndividual rdf:about="&individuals;John">
+        <rdf:type rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/organization#Person"/>
+        <plays rdf:resource="&individuals;AssistantDoctor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ai4.inf.uni-bayreuth.de/ontology/individuals#Kate -->
+
+    <owl:NamedIndividual rdf:about="&individuals;Kate">
+        <rdf:type rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/organization#Person"/>
+        <plays rdf:resource="&individuals;MTA"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ai4.inf.uni-bayreuth.de/ontology/individuals#MTA -->
+
+    <owl:NamedIndividual rdf:about="&individuals;MTA">
+        <rdf:type rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/organization#Role"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ai4.inf.uni-bayreuth.de/ontology/individuals#MedicalSuperintendent -->
+
+    <owl:NamedIndividual rdf:about="&individuals;MedicalSuperintendent">
+        <rdf:type rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/organization#Role"/>
+        <supervises rdf:resource="&individuals;AssistantMedicalDirector"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ai4.inf.uni-bayreuth.de/ontology/individuals#Peter -->
+
+    <owl:NamedIndividual rdf:about="&individuals;Peter">
+        <rdf:type rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/organization#Person"/>
+        <plays rdf:resource="&individuals;AssistantMedicalDirector"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://ai4.inf.uni-bayreuth.de/ontology/individuals#Surgery -->
+
+    <owl:NamedIndividual rdf:about="&individuals;Surgery">
+        <rdf:type rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/organization#Division"/>
+        <member rdf:resource="&individuals;Charles"/>
+        <member rdf:resource="&individuals;Claire"/>
+        <member rdf:resource="&individuals;John"/>
+        <member rdf:resource="&individuals;Peter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <swrl:Variable rdf:about="http://ai4.inf.uni-bayreuth.de/ontology/d"/>
+    <swrl:Variable rdf:about="http://ai4.inf.uni-bayreuth.de/ontology/a"/>
+    <swrl:Variable rdf:about="http://ai4.inf.uni-bayreuth.de/ontology/b"/>
+    <swrl:Variable rdf:about="http://ai4.inf.uni-bayreuth.de/ontology/r"/>
+    <swrl:Variable rdf:about="http://ai4.inf.uni-bayreuth.de/ontology/s"/>
+    <swrl:Imp>
+        <swrl:head>
+            <swrl:AtomList>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                        <swrl:argument1 rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/a"/>
+                        <swrl:argument2 rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/b"/>
+                        <swrl:propertyPredicate rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/organization#supervisorOf"/>
+                    </swrl:IndividualPropertyAtom>
+                </rdf:first>
+            </swrl:AtomList>
+        </swrl:head>
+        <swrl:body>
+            <swrl:AtomList>
+                <rdf:first>
+                    <swrl:ClassAtom>
+                        <swrl:argument1 rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/d"/>
+                        <swrl:classPredicate rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/organization#Division"/>
+                    </swrl:ClassAtom>
+                </rdf:first>
+                <rdf:rest>
+                    <swrl:AtomList>
+                        <rdf:first>
+                            <swrl:ClassAtom>
+                                <swrl:argument1 rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/a"/>
+                                <swrl:classPredicate rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/organization#Person"/>
+                            </swrl:ClassAtom>
+                        </rdf:first>
+                        <rdf:rest>
+                            <swrl:AtomList>
+                                <rdf:first>
+                                    <swrl:ClassAtom>
+                                        <swrl:argument1 rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/b"/>
+                                        <swrl:classPredicate rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/organization#Person"/>
+                                    </swrl:ClassAtom>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <swrl:AtomList>
+                                        <rdf:first>
+                                            <swrl:ClassAtom>
+                                                <swrl:argument1 rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/r"/>
+                                                <swrl:classPredicate rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/organization#Role"/>
+                                            </swrl:ClassAtom>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <swrl:AtomList>
+                                                <rdf:rest>
+                                                    <swrl:AtomList>
+                                                        <rdf:first>
+                                                            <swrl:IndividualPropertyAtom>
+                                                                <swrl:argument2 rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/a"/>
+                                                                <swrl:argument1 rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/d"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/organization#member"/>
+                                                            </swrl:IndividualPropertyAtom>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <swrl:AtomList>
+                                                                <rdf:rest>
+                                                                    <swrl:AtomList>
+                                                                        <rdf:rest>
+                                                                            <swrl:AtomList>
+                                                                                <rdf:first>
+                                                                                    <swrl:IndividualPropertyAtom>
+                                                                                        <swrl:argument1 rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/b"/>
+                                                                                        <swrl:argument2 rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/r"/>
+                                                                                        <swrl:propertyPredicate rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/organization#plays"/>
+                                                                                    </swrl:IndividualPropertyAtom>
+                                                                                </rdf:first>
+                                                                                <rdf:rest>
+                                                                                    <swrl:AtomList>
+                                                                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                                                                        <rdf:first>
+                                                                                            <swrl:IndividualPropertyAtom>
+                                                                                                <swrl:argument2 rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/r"/>
+                                                                                                <swrl:argument1 rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/s"/>
+                                                                                                <swrl:propertyPredicate rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/organization#supervises"/>
+                                                                                            </swrl:IndividualPropertyAtom>
+                                                                                        </rdf:first>
+                                                                                    </swrl:AtomList>
+                                                                                </rdf:rest>
+                                                                            </swrl:AtomList>
+                                                                        </rdf:rest>
+                                                                        <rdf:first>
+                                                                            <swrl:IndividualPropertyAtom>
+                                                                                <swrl:argument1 rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/a"/>
+                                                                                <swrl:argument2 rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/s"/>
+                                                                                <swrl:propertyPredicate rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/organization#plays"/>
+                                                                            </swrl:IndividualPropertyAtom>
+                                                                        </rdf:first>
+                                                                    </swrl:AtomList>
+                                                                </rdf:rest>
+                                                                <rdf:first>
+                                                                    <swrl:IndividualPropertyAtom>
+                                                                        <swrl:argument2 rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/b"/>
+                                                                        <swrl:argument1 rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/d"/>
+                                                                        <swrl:propertyPredicate rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/organization#member"/>
+                                                                    </swrl:IndividualPropertyAtom>
+                                                                </rdf:first>
+                                                            </swrl:AtomList>
+                                                        </rdf:rest>
+                                                    </swrl:AtomList>
+                                                </rdf:rest>
+                                                <rdf:first>
+                                                    <swrl:ClassAtom>
+                                                        <swrl:argument1 rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/s"/>
+                                                        <swrl:classPredicate rdf:resource="http://ai4.inf.uni-bayreuth.de/ontology/organization#Role"/>
+                                                    </swrl:ClassAtom>
+                                                </rdf:first>
+                                            </swrl:AtomList>
+                                        </rdf:rest>
+                                    </swrl:AtomList>
+                                </rdf:rest>
+                            </swrl:AtomList>
+                        </rdf:rest>
+                    </swrl:AtomList>
+                </rdf:rest>
+            </swrl:AtomList>
+        </swrl:body>
+    </swrl:Imp>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.1.0.20069) http://owlapi.sourceforge.net -->
+

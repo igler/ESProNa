@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[pairs]]></name>
+<type>object</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[Useful predicates over lists of pairs (key-value terms).]]></comment>
+<author><![CDATA[Paulo Moura]]></author>
+<version>1.1</version>
+<date>2011/1/7</date>
+</entity>
+<relations>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[keys_values/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[keys_values(+list(pair),-list,-list)]]></template>
+<solutions>one</solutions>
+</mode>
+<mode>
+<template><![CDATA[keys_values(-list(pair),+list,+list)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Converts between a list of pairs and lists of keys and values.]]></comment>
+<template><![CDATA[keys_values(Pairs,Keys,Values)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[keys/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[keys(+list(pair),-list)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Extracts a list of keys from a list of pairs.]]></comment>
+<template><![CDATA[keys(Pairs,Keys)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[values/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[values(+list(pair),-list)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Extracts a list of values from a list of pairs.]]></comment>
+<template><![CDATA[values(Pairs,Values)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[transpose/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[transpose(+list(pair),-list(pair))]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Transposes a list of pairs by swapping each pair key and value. The relative order of the list elements is kept.]]></comment>
+<template><![CDATA[transpose(Pairs,TransposedPairs)]]></template>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

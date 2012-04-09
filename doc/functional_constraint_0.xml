@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[functional_constraint]]></name>
+<type>category</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[This perspective is conform when the given functional constraints evaluate to true.]]></comment>
+<author><![CDATA[Michael Igler (michael.igler@uni-bayreuth.de)]]></author>
+<version>0.8</version>
+<date>2010/4/19</date>
+</entity>
+<relations>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[functional_constraint/4]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[functional_constraint(+list(actions),+modelstate,-instance_identifier,+callable)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Contains the POPM constraints of the functional perspective.]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[functional_constraint/5]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[functional_constraint(+modal_prefix,+list(actions),+modelstate,-instance_identifier,+callable)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Contains the POPM constraints of the functional perspective.]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[functional_constraints_conform/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[functional_constraints_conform(?action,+modelstate,?instance_identifier)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[This predicate expects: instantiated Action(+var), 
+						 						instantiated ModelState(+list) and
+												a free or instantiated Instance(?var).]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[counter_increasable/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[counter_increasable(+var)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Verifies if the counter can be increased by 1. The current counter has to be smaller than supremum of the counter_interval.]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[interval_supremum/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[interval_supremum(?var)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Retrieves the interval supremum of a process.]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[interval_infimum/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[interval_infimum(?var)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Retrieves the interval infimum of a process.]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[counter_interval/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[counter_interval(-interval)]]></template>
+<solutions>one_or_more</solutions>
+</mode>
+<comment><![CDATA[Retrieves the interval of a process.]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[correlated_to_other_processes/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[correlated_to_other_processes(+modelstate)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Checks if the counter_interval of the process is dependent/correlated to other processes.]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[exists_instance/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[exists_instance(+modelstate,?action,?instance_identifier)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Verifies if a certain instance has been executed in the given model state.]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[actions_applicable/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[actions_applicable(+modelstate,?action,?instance_identifier)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Checks of the actions are applicable in the given model state.]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[in_domain/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[in_domain(+modelstate)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Checks if process counter is in the domain interval in a given model state.]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[all_done/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[all_done(+modelstate)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Checks if the counters of all processes build a solution in the given model state.]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[instance_agent_data_tool/6]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[instance_agent_data_tool(+modelstate,+action,?instance_identifier,?list(agent_identifiers),?list(data_identifiers),?list(tool_identifiers))]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Returns which instances are started/finished/aborted in a given model state. 
+						Lists of agents, data and tools are also retrieved expressing more detailed information about the execution.]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[optional/0]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[optional]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Checks if a process is optional.]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[highest_instance_id/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[highest_instance_id(+list,-number)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Retrieves highest instance-ID of a process.]]></comment>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

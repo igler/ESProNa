@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[operational_constraint]]></name>
+<type>category</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[This perspective is conform when the given operational constraints evaluate to true.]]></comment>
+<author><![CDATA[Michael Igler (michael.igler@uni-bayreuth.de)]]></author>
+<version>0.8</version>
+<date>2009/10/15</date>
+</entity>
+<relations>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[operational_constraint/5]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+</predicate>
+<predicate>
+<name><![CDATA[operational_constraint/6]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<comment><![CDATA[Contains the POPM constraints of the operational perspective.]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[operational_constraints_conform/4]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[operational_constraints_conform(+var(action),+modelstate,?instance_identifier,+list(tool_identifiers))]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[This predicate expects: instantiated Action(+var), 
+						 						instantiated ModelState(+list), 
+												instantiated Instance(+var) and
+												free or instantiated ToolList(?list).]]></comment>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[graphviz]]></name>
+<type>object</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[dot-file exporter.]]></comment>
+<author><![CDATA[Michael Igler (michael.igler@uni-bayreuth.de)]]></author>
+<version>0.8</version>
+<date>2011/3/3</date>
+</entity>
+<relations>
+<implements>
+<name><![CDATA[monitoring]]></name>
+<scope>public</scope>
+<file><![CDATA[monitoring_0]]></file>
+</implements>
+<uses>
+<name><![CDATA[event_registry]]></name>
+<file><![CDATA[event_registry_0]]></file>
+</uses>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[file/1]]></name>
+<scope>public</scope>
+<compilation>dynamic</compilation>
+</predicate>
+<predicate>
+<name><![CDATA[start_export/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+</predicate>
+<predicate>
+<name><![CDATA[finish_export/4]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+<predicate>
+<name><![CDATA[list_pairs/2]]></name>
+<scope>private</scope>
+<compilation>static</compilation>
+</predicate>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

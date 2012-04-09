@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[process_planning]]></name>
+<type>object</type>
+<compilation>static, context_switching_calls, events</compilation>
+<comment><![CDATA[Process planning object to enable ProcessNavigation in ESProNa.]]></comment>
+<author><![CDATA[Michael Igler (michael.igler@uni-bayreuth.de)]]></author>
+<version>0.8</version>
+<date>2011/3/3</date>
+</entity>
+<relations>
+<instantiates>
+<name><![CDATA[heuristic_state_space]]></name>
+<scope>public</scope>
+<file><![CDATA[heuristic_state_space_0]]></file>
+</instantiates>
+</relations>
+<predicates>
+<public>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[rest_proxy_module]]></name>
+<type>object</type>
+<compilation>static, context_switching_calls</compilation>
+</entity>
+<relations>
+<uses>
+<name><![CDATA[thread_httpd]]></name>
+<file><![CDATA[thread_httpd_0]]></file>
+</uses>
+<uses>
+<name><![CDATA[http_dispatch]]></name>
+<file><![CDATA[http_dispatch_0]]></file>
+</uses>
+<uses>
+<name><![CDATA[html_write]]></name>
+<file><![CDATA[html_write_0]]></file>
+</uses>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[say_hi/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+</predicate>
+<predicate>
+<name><![CDATA[start_server/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

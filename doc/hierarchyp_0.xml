@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[hierarchyp]]></name>
+<type>protocol</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[Common hierarchy protocol for prototype and class hierarchies.]]></comment>
+<author><![CDATA[Paulo Moura]]></author>
+<version>1.0</version>
+<date>2000/7/24</date>
+</entity>
+<relations>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[ancestor/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[ancestor(?object)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Returns, by backtracking, all object ancestors.]]></comment>
+<template><![CDATA[ancestor(Ancestor)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[ancestors/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[ancestors(-list)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[List of all object ancestors.]]></comment>
+<template><![CDATA[ancestors(Ancestors)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[leaf/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[leaf(?object)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Returns, by backtracking, all object leaves.]]></comment>
+<template><![CDATA[leaf(Leaf)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[leaves/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[leaves(-list)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[List of all object leaves.]]></comment>
+<template><![CDATA[leaves(Leaves)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[descendant/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[descendant(?object)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Returns, by backtracking, all object descendants.]]></comment>
+<template><![CDATA[descendant(Descendant)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[descendants/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[descendants(-list)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[List of all object descendants.]]></comment>
+<template><![CDATA[descendants(Descendants)]]></template>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

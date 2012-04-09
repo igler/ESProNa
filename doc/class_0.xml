@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[class]]></name>
+<type>object</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[Default metaclass for all classes.]]></comment>
+<author><![CDATA[Paulo Moura]]></author>
+<version>1.1</version>
+<date>2005/3/12</date>
+</entity>
+<relations>
+<implements>
+<name><![CDATA[classp]]></name>
+<scope>public</scope>
+<file><![CDATA[classp_0]]></file>
+</implements>
+<instantiates>
+<name><![CDATA[class]]></name>
+<scope>public</scope>
+<file><![CDATA[class_0]]></file>
+</instantiates>
+<specializes>
+<name><![CDATA[abstract_class]]></name>
+<scope>public</scope>
+<file><![CDATA[abstract_class_0]]></file>
+</specializes>
+</relations>
+<predicates>
+<public>
+</public>
+<protected>
+</protected>
+<private>
+<predicate>
+<name><![CDATA[instance_counter_/1]]></name>
+<scope>private</scope>
+<compilation>dynamic</compilation>
+<mode>
+<template><![CDATA[instance_counter_(?integer)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Stores a counter of created instances.]]></comment>
+<template><![CDATA[instance_counter_(Counter)]]></template>
+</predicate>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

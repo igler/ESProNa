@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[dictionaryp]]></name>
+<type>protocol</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[Dictionary protocol.]]></comment>
+<author><![CDATA[Paulo Moura]]></author>
+<version>2.0</version>
+<date>2010/2/26</date>
+</entity>
+<relations>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[as_dictionary/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[as_dictionary(@list(pairs),-dictionary)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Converts a list of key-value pairs to a dictionary.]]></comment>
+<template><![CDATA[as_dictionary(Pairs,Dictionary)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[as_list/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[as_list(@dictionary,-list(pairs))]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Converts a dictionary to a ordered list of key-value pairs.]]></comment>
+<template><![CDATA[as_list(Dictionary,Pairs)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[clone/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[clone(+tree,-tree,-list(pairs))]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Clones a dictionary using the same keys but with all values unbound and returning a list of all the pairs in the new clone.]]></comment>
+<template><![CDATA[clone(Dictionary,Clone,ClonePairs)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[clone/4]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[clone(+tree,-list(pairs),-tree,-list(pairs))]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Clones a dictionary using the same keys but with all values unbound and returning the list of all pairs in the dictionary and in the clone.]]></comment>
+<template><![CDATA[clone(Dictionary,Pairs,Clone,ClonePairs)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[insert/4]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[insert(+dictionary,+ground,@term,-dictionary)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Inserts a Key-Value pair into a dictionary, returning the updated dictionary. When the key already exists, the associated value is updated.]]></comment>
+<template><![CDATA[insert(OldDictionary,Key,Value,NewDictionary)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[delete/4]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[delete(+dictionary,@ground,?term,-dictionary)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Deletes a matching Key-Value pair from a dictionary, returning the updated dictionary.]]></comment>
+<template><![CDATA[delete(OldDictionary,Key,Value,NewDictionary)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[update/4]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[update(+dictionary,@ground,+term,-dictionary)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Updates the value associated with Key in a dictionary, returning the updated dictionary. Fails if it cannot find the key.]]></comment>
+<template><![CDATA[update(OldDictionary,Key,NewValue,NewDictionary)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[update/5]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[update(+dictionary,@ground,?term,+term,-dictionary)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Updates the value associated with Key in a dictionary, returning the updated dictionary. Fails if it cannot find the key or if the existing value does not match OldValue.]]></comment>
+<template><![CDATA[update(OldDictionary,Key,OldValue,NewValue,NewDictionary)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[empty/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[empty(@dictionary)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the dictionary is empty.]]></comment>
+<template><![CDATA[empty(Dictionary)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[lookup/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[lookup(+ground,?term,@dictionary)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<mode>
+<template><![CDATA[lookup(-ground,?term,@dictionary)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Lookups a matching Key-Value pair from a dictionary.]]></comment>
+<template><![CDATA[lookup(Key,Value,Dictionary)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[previous/4]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[previous(+dictionary,+key,-key,-value)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Returns the previous pair in a dictionary given a key.]]></comment>
+<template><![CDATA[previous(Dictionary,Key,Previous,Value)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[next/4]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[next(+dictionary,+key,-key,-value)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Returns the next pair in a dictionary given a key.]]></comment>
+<template><![CDATA[next(Dictionary,Key,Next,Value)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[min/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[min(+dictionary,-key,-value)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Returns the pair with the minimum key in a dictionary. Fails if the dictionary is empty.]]></comment>
+<template><![CDATA[min(Dictionary,Key,Value)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[max/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[max(+dictionary,-key,-value)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Returns the pair with the maximum key in a dictionary. Fails if the dictionary is empty.]]></comment>
+<template><![CDATA[max(Dictionary,Key,Value)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[delete_min/4]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[delete_min(+dictionary,-key,-value,-dictionary)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Deletes the pair with the minimum key from a dictionary, returning the deleted pair and the updated dictionary.]]></comment>
+<template><![CDATA[delete_min(OldDictionary,Key,Value,NewDictionary)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[delete_max/4]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[delete_max(+dictionary,-key,-value,-dictionary)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Deletes the pair with the maximum key from a dictionary, returning the deleted pair and the updated dictionary.]]></comment>
+<template><![CDATA[delete_max(OldDictionary,Key,Value,NewDictionary)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[keys/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[keys(@dictionary,-list)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Returns a list with all dictionary keys.]]></comment>
+<template><![CDATA[keys(Dictionary,List)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[map/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<meta><![CDATA[map(1,*)]]></meta>
+<mode>
+<template><![CDATA[map(@callable,+dictionary)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Maps a closure over each dictionary key-value pair. Fails if the mapped closure attempts to modify the keys.]]></comment>
+<template><![CDATA[map(Closure,Dictionary)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[map/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<meta><![CDATA[map(2,*,*)]]></meta>
+<mode>
+<template><![CDATA[map(@callable,+dictionary,-dictionary)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Maps a closure over each dictionary key-value pair, returning the new dictionary. Fails if the mapped closure atempts to modify the keys.]]></comment>
+<template><![CDATA[map(Closure,OldDictionary,NewDictionary)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[apply/4]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<meta><![CDATA[apply(2,*,*,*)]]></meta>
+<mode>
+<template><![CDATA[apply(+callable,+dictionary,+key,-dictionary)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Applies a closure to a specific key-value pair, returning the new dictionary. Fails if the key cannot be found or if the mapped closure atempts to modify the key.]]></comment>
+<template><![CDATA[apply(Closure,OldDictionary,Key,NewDictionary)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[size/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[size(@dictionary,?integer)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Number of dictionary entries.]]></comment>
+<template><![CDATA[size(Dictionary,Size)]]></template>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

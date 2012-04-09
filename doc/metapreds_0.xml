@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[metapreds]]></name>
+<type>object</type>
+<compilation>static, context_switching_calls</compilation>
+</entity>
+<relations>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[apply/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<meta><![CDATA[apply(1,*)]]></meta>
+<mode>
+<template><![CDATA[apply(+callable,?term)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+</predicate>
+<predicate>
+<name><![CDATA[test_this/0]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

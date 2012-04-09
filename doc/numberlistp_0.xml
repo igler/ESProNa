@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[numberlistp]]></name>
+<type>protocol</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[List of numbers protocol.]]></comment>
+<author><![CDATA[Paulo Moura]]></author>
+<version>1.2</version>
+<date>2008/9/15</date>
+</entity>
+<relations>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[product/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[product(+list(number),?number)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Calculates the product of all list numbers. Fails if the list is empty.]]></comment>
+<template><![CDATA[product(List,Product)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[sum/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[sum(+list(number),?number)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Calculates the sum of all list numbers. Returns zero if the list is empty.]]></comment>
+<template><![CDATA[sum(List,Sum)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[average/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[average(+list(number),?float)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Calculates the average (i.e. arithmetic mean) of a list of numbers. Fails if the list is empty.]]></comment>
+<template><![CDATA[average(List,Average)]]></template>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

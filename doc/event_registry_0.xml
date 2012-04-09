@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[event_registry]]></name>
+<type>object</type>
+<compilation>static, context_switching_calls, events</compilation>
+<comment><![CDATA[Before and after events registry predicates.]]></comment>
+<author><![CDATA[Paulo Moura]]></author>
+<version>1.1</version>
+<date>2009/10/8</date>
+</entity>
+<relations>
+<implements>
+<name><![CDATA[event_registryp]]></name>
+<scope>public</scope>
+<file><![CDATA[event_registryp_0]]></file>
+</implements>
+</relations>
+<predicates>
+<public>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

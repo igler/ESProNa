@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[process_state(A,B)]]></name>
+<type>object</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[Represents the state of a process containing Process_ID, Process_History_List, Process_Status.]]></comment>
+<author><![CDATA[Michael Igler (michael.igler@uni-bayreuth.de)]]></author>
+<version>0.8</version>
+<date>2010/4/19</date>
+</entity>
+<relations>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[get_highest_instance_id/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[get_highest_instance_id(-number)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Retrieves the highest instance-ID of the process.]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[update_process_state/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[update_process_state(+compound_term(concept_identifiers),-process_state)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Updates a process state.]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[instance_successtype_agents_data_tools/5]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[instance_successtype_agents_data_tools(+instance_identifier,+action,+agent,+data,+tool)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Retrieves information about a certain execution.]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[instance_successtype_agents_data_tools_counter/6]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[instance_successtype_agents_data_tools_counter(+instance_identifier,+action,+agent,+data,+tool,-number)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Counts the executions by a certain person with certain data and tools.]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[print/0]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[print]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Prints some informations about the state.]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[print/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[print(+var)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Prints some informations about the process state to a stream alias.]]></comment>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[abstract_class]]></name>
+<type>object</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[Default metaclass for all abstract classes.]]></comment>
+<author><![CDATA[Paulo Moura]]></author>
+<version>2.0</version>
+<date>2000/7/24</date>
+</entity>
+<relations>
+<implements>
+<name><![CDATA[abstract_classp]]></name>
+<scope>public</scope>
+<file><![CDATA[abstract_classp_0]]></file>
+</implements>
+<instantiates>
+<name><![CDATA[class]]></name>
+<scope>public</scope>
+<file><![CDATA[class_0]]></file>
+</instantiates>
+<specializes>
+<name><![CDATA[object]]></name>
+<scope>public</scope>
+<file><![CDATA[object_0]]></file>
+</specializes>
+</relations>
+<predicates>
+<public>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[process_model]]></name>
+<type>object</type>
+<compilation>static, context_switching_calls</compilation>
+</entity>
+<relations>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[id/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[id(-model_id)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[The ID of the process model.]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[title/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[title(-atom)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[The title of the process model.]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[contains_processes/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[contains_processes(?list)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[...]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[available_process_models/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[available_process_models(?process_model_id)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Retrieving available process models.]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[load/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[load(+var(file))]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Loading and instatiating process objects defined in a file.]]></comment>
+</predicate>
+<predicate>
+<name><![CDATA[unload/0]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[unload]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Unloading all process objects.]]></comment>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

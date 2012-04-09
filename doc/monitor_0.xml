@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[monitor]]></name>
+<type>category</type>
+<compilation>static, context_switching_calls, events</compilation>
+<comment><![CDATA[Monitor predicates.]]></comment>
+<author><![CDATA[Paulo Moura]]></author>
+<version>1.2</version>
+<date>2009/10/8</date>
+</entity>
+<relations>
+<implements>
+<name><![CDATA[monitorp]]></name>
+<scope>public</scope>
+<file><![CDATA[monitorp_0]]></file>
+</implements>
+</relations>
+<predicates>
+<public>
+</public>
+<protected>
+</protected>
+<private>
+<predicate>
+<name><![CDATA[spy_point_/4]]></name>
+<scope>private</scope>
+<compilation>dynamic</compilation>
+<mode>
+<template><![CDATA[spy_point_(?event,?object,?callable,?object)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Stores current spy points.]]></comment>
+<template><![CDATA[spy_point_(Event,Object,Message,Sender)]]></template>
+</predicate>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

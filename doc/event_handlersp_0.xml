@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[event_handlersp]]></name>
+<type>protocol</type>
+<compilation>static, context_switching_calls, events</compilation>
+<comment><![CDATA[Event handlers protocol.]]></comment>
+<author><![CDATA[Paulo Moura]]></author>
+<version>1.1</version>
+<date>2003/2/12</date>
+</entity>
+<relations>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[before/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[before(@object,@nonvar,@object)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Before event handler.]]></comment>
+<template><![CDATA[before(Object,Message,Sender)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[after/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[after(@object,@nonvar,@object)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[After event handler.]]></comment>
+<template><![CDATA[after(Object,Message,Sender)]]></template>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

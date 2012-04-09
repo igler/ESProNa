@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[heuristic_perspective]]></name>
+<type>object</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[Predicates for the heuristic search/planning in the Organizational Perspective.]]></comment>
+<author><![CDATA[Michael Igler (michael.igler@uni-bayreuth.de)]]></author>
+<version>0.8</version>
+<date>2011/4/6</date>
+</entity>
+<relations>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[costs_do_process/6]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[costs_do_process(?process_object,?var(action),+modelstate,?instance_identifier,?list,-number)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Calculates the costs for executing a given process ID.
+						Example query: 	organizational_heuristic::costs_do_process(pid_a(_), start, Costs).]]></comment>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+<predicate>
+<name><![CDATA[costs_necessity_do_process/6]]></name>
+<scope>private</scope>
+<compilation>static</compilation>
+</predicate>
+<predicate>
+<name><![CDATA[costs_recommendation_do_process/6]]></name>
+<scope>private</scope>
+<compilation>static</compilation>
+</predicate>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

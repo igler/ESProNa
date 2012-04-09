@@ -1,0 +1,31 @@
+{
+  "instance":"1",
+  "agent": ["http://ai4.inf.uni-bayreuth.de/ontology/individuals#Jack" ],
+  "data": [],
+  "tool": ["HIS" ],
+  "model_state": {
+    "process_state_members": [
+      {
+		"object_name":"process_state",
+		"process_id":"set_up_surgery_plan_extended#pid_0",
+		"process_history": []
+	      },
+	      {
+		"object_name":"process_state",
+		"process_id":"set_up_surgery_plan_extended#pid_1",
+		"process_history": []
+	      },
+	      {
+		"object_name":"process_state",
+		"process_id":"set_up_surgery_plan_extended#pid_2",
+		"process_history": []
+	      },
+	      {
+		"object_name":"process_state",
+		"process_id":"set_up_surgery_plan_extended#pid_3",
+		"process_history": []
+	      }
+    ],
+    "model_done_code":0
+  }
+}

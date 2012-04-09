@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[varlistp]]></name>
+<type>protocol</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[List of variables protocol.]]></comment>
+<author><![CDATA[Paulo Moura]]></author>
+<version>1.0</version>
+<date>2009/4/29</date>
+</entity>
+<relations>
+</relations>
+<predicates>
+<public>
+<predicate>
+<name><![CDATA[append/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[append(?list,?list,?list)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Appends two lists.]]></comment>
+<template><![CDATA[append(List1,List2,List)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[delete/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[delete(@list,@term,?list)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Deletes from a list all ocurrences of an element returning the list of remaining elements.]]></comment>
+<template><![CDATA[delete(List,Element,Remaining)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[empty/1]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[empty(@list)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[True if the argument is an empty list.]]></comment>
+<template><![CDATA[empty(List)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[flatten/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[flatten(@list,-list)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Flattens a list of lists into a list.]]></comment>
+<template><![CDATA[flatten(List,Flatted)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[last/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[last(@list,@var)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[List last element (if it exists).]]></comment>
+<template><![CDATA[last(List,Last)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[length/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[length(@list,?integer)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[List length.]]></comment>
+<template><![CDATA[length(List,Length)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[memberchk/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[memberchk(@var,@list)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[Checks if a variable is a member of a list.]]></comment>
+<template><![CDATA[memberchk(Element,List)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[nextto/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[nextto(@var,@var,?list)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[X and Y are consecutive elements in List.]]></comment>
+<template><![CDATA[nextto(X,Y,List)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[nth0/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[nth0(?integer,+list,@var)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Nth element of a list (counting from zero).]]></comment>
+<template><![CDATA[nth0(Nth,List,Element)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[nth0/4]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[nth0(?integer,+list,@var,?list)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Nth element of a list (counting from zero).]]></comment>
+<template><![CDATA[nth0(Nth,List,Element,Residue)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[nth1/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[nth1(?integer,+list,@var)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Nth element of a list (counting from one).]]></comment>
+<template><![CDATA[nth1(Nth,List,Element)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[nth1/4]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[nth1(?integer,+list,@var,?list)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Nth element of a list (counting from zero).]]></comment>
+<template><![CDATA[nth1(Nth,List,Element,Residue)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[permutation/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[permutation(@list,@list)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<comment><![CDATA[The two lists are a permutation of the same list.]]></comment>
+<template><![CDATA[permutation(List,Permutation)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[prefix/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[prefix(?list,@list)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Prefix is a prefix of List.]]></comment>
+<template><![CDATA[prefix(Prefix,List)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[reverse/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[reverse(@list,?list)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<mode>
+<template><![CDATA[reverse(?list,@list)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<mode>
+<template><![CDATA[reverse(-list,-list)]]></template>
+<solutions>one_or_more</solutions>
+</mode>
+<comment><![CDATA[Reverses a list.]]></comment>
+<template><![CDATA[reverse(List,Reversed)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[same_length/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[same_length(@list,?list)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<mode>
+<template><![CDATA[same_length(?list,@list)]]></template>
+<solutions>zero_or_one</solutions>
+</mode>
+<mode>
+<template><![CDATA[same_length(-list,-list)]]></template>
+<solutions>one_or_more</solutions>
+</mode>
+<comment><![CDATA[The two lists have the same length.]]></comment>
+<template><![CDATA[same_length(List1,List2)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[select/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[select(@var,?list,?list)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Selects an element from a list, returning the list of remaining elements.]]></comment>
+<template><![CDATA[select(Element,List,Remaining)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[sublist/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[sublist(?list,@list)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[The first list is a sublist of the second.]]></comment>
+<template><![CDATA[sublist(Sublist,List)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[subtract/3]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[subtract(@list,@list,-list)]]></template>
+<solutions>one</solutions>
+</mode>
+<comment><![CDATA[Removes all elements in the second list from the first list, returning the list of remaining elements.]]></comment>
+<template><![CDATA[subtract(List,Elements,Remaining)]]></template>
+</predicate>
+<predicate>
+<name><![CDATA[suffix/2]]></name>
+<scope>public</scope>
+<compilation>static</compilation>
+<mode>
+<template><![CDATA[suffix(?list,@list)]]></template>
+<solutions>zero_or_more</solutions>
+</mode>
+<comment><![CDATA[Suffix is a suffix of List.]]></comment>
+<template><![CDATA[suffix(Suffix,List)]]></template>
+</predicate>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>

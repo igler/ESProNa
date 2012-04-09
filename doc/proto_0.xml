@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE logtalk SYSTEM "logtalk.dtd">
+<?xml-stylesheet type="text/xsl" href="lgtxml.xsl"?>
+<logtalk>
+<entity>
+<name><![CDATA[proto]]></name>
+<type>object</type>
+<compilation>static, context_switching_calls</compilation>
+<comment><![CDATA[Minimal predicates for all prototypes. Default root of the extension graph.]]></comment>
+<author><![CDATA[Paulo Moura]]></author>
+<version>1.2</version>
+<date>2006/12/14</date>
+</entity>
+<relations>
+<implements>
+<name><![CDATA[protop]]></name>
+<scope>public</scope>
+<file><![CDATA[protop_0]]></file>
+</implements>
+<implements>
+<name><![CDATA[monitoring]]></name>
+<scope>public</scope>
+<file><![CDATA[monitoring_0]]></file>
+</implements>
+<imports>
+<name><![CDATA[initialization]]></name>
+<scope>public</scope>
+<file><![CDATA[initialization_0]]></file>
+</imports>
+<imports>
+<name><![CDATA[proto_hierarchy]]></name>
+<scope>public</scope>
+<file><![CDATA[proto_hierarchy_0]]></file>
+</imports>
+<uses>
+<name><![CDATA[event_registry]]></name>
+<file><![CDATA[event_registry_0]]></file>
+</uses>
+</relations>
+<predicates>
+<public>
+</public>
+<protected>
+</protected>
+<private>
+</private>
+</predicates>
+<operators>
+</operators>
+<remarks>
+</remarks>
+</logtalk>
