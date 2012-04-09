@@ -1,19 +1,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%  ESProNa - 	Modeling, Execution and SmartNavigation(c) of Declarative Business Processes
-%  Release 0.7
+%  ESProNa - 	Modeling, Execution and Navigation of Declarative Business Processes
+%  Release 0.8
 %  
-%  Copyright (c) 2007-2011 Michael Igler.       All Rights Reserved.
-%
-%  Contact: 	Michael Igler (michael.igler@uni-bayreuth.de)
-%				University of Bayreuth
-%				Chair for Applied Computer Science IV
-%				Databases and Information Systems
-%				Universitaetsstrasse 30
-%				D-95440 Bayreuth
+%  Copyright (c) 2007-2012 Michael Igler.       All Rights Reserved.
+%  ESProNa is free software.  You can redistribute it and/or modify it under the terms 
+%  of the "Artistic License 2.0" as published by The Perl Foundation. 
+%  Consult the "LICENSE.txt" file for details.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 :- object(esprona_breadth_first(Bound),
 	instantiates(esprona_blind_search(Bound))).
 
