@@ -3,6 +3,30 @@
    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 process_model::load(set_up_surgery_plan_extended(loader)).
 
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   														ACTION QUERIES 
+   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+process_planning::initial_state(set_up_surgery_plan_extended, InitialState),
+extends_object(Process, process),
+Process::validate_action(start, InitialState, Instance-AgentList-RequiredDataList-ToolsList).							
+
+process_planning::initial_state(set_up_surgery_plan_extended, InitialState),
+'set_up_surgery_plan_extended#pid_0'(_)::perform_action(start, InitialState, 
+	1-['http://ai4.inf.uni-bayreuth.de/ontology/individuals#John']-[]-['HIS'], 
+	NextModelState
+).
+
+ModelState = model_state([
+	process_state('set_up_surgery_plan_extended#pid_0', [1-start-['http://ai4.inf.uni-bayreuth.de/ontology/individuals#John']-[]-['HIS']]),
+	process_state('set_up_surgery_plan_extended#pid_1', []), 
+	process_state('set_up_surgery_plan_extended#pid_2', []),
+	process_state('set_up_surgery_plan_extended#pid_3', [])], 
+	0),
+extends_object(Process, process),
+Process::validate_action(Action, ModelState, Instance-AgentList-RequiredDataList-ToolsList).
+
+
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
    														STATE SPACE GENERATING QUERIES 
    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */

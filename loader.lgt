@@ -28,7 +28,8 @@
 :- use_module(library('http/http_dispatch')).
 :- use_module(library('http/html_write')).
 
-logtalk_library_path(esprona, './').
+
+logtalk_library_path(esprona, '$ESProNa/').
 logtalk_library_path(esprona_library, esprona('library/')).
 logtalk_library_path(esprona_contributions, esprona('contributions/')).
 logtalk_library_path(rest, esprona_library('REST/')).
@@ -50,7 +51,6 @@ logtalk_library_path(heuristics, popm('heuristics/')).
 
 % location process models
 logtalk_library_path(process_models, esprona('process_models/')).
-%logtalk_library_path(set_up_surgery_plan, process_models('set_up_surgery_plan/')).
 logtalk_library_path(set_up_surgery_plan_extended, process_models('set_up_surgery_plan_extended/')).
 logtalk_library_path(be_dep_test, process_models('be_dep_test/')).
 
@@ -68,7 +68,6 @@ logtalk_library_path(unit_test_1, unit_tests('unit_test_1/')).
 	
 	logtalk_load(library(types_loader)),
 	logtalk_load(library(metapredicates_loader)),
-	logtalk_load(metapredicates(loader)),
 	logtalk_load(library(pairs), [reload(skip)]),
 	logtalk_load(library(dates_loader)),	
 	logtalk_load(roots(loader)),
@@ -164,7 +163,7 @@ logtalk_library_path(unit_test_1, unit_tests('unit_test_1/')).
 	logtalk_load(visualize(graphviz)),		
 	nl,
 	
-	write('+++ Loading REST/JSON interface to ESProNa...'),
+	write('+++ Loading REST/JSON interface...'),
 	logtalk_load(rest(rest)),
 	consult('./library/REST/rest_proxy_module'),
 	nl,

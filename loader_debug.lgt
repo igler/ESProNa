@@ -28,7 +28,7 @@
 :- use_module(library('http/http_dispatch')).
 :- use_module(library('http/html_write')).
 
-logtalk_library_path(esprona, './').
+logtalk_library_path(esprona, '$ESProNa/').
 logtalk_library_path(esprona_library, esprona('library/')).
 logtalk_library_path(esprona_contributions, esprona('contributions/')).
 logtalk_library_path(rest, esprona_library('REST/')).
@@ -60,7 +60,6 @@ logtalk_library_path(unit_test_1, unit_tests('unit_test_1/')).
 :- initialization((	
 	logtalk_load(library(types_loader)),
 	logtalk_load(library(metapredicates_loader)),
-	logtalk_load(metapredicates(loader)),
 	logtalk_load(library(pairs), [reload(skip)]),
 	logtalk_load(library(dates_loader)),	
 	logtalk_load(roots(loader)),
@@ -172,7 +171,7 @@ logtalk_library_path(unit_test_1, unit_tests('unit_test_1/')).
 	logtalk_load(visualize(graphviz)),		
 	nl,
 	
-	write('+++ Loading REST/JSON interface to ESProNa...'),
+	write('+++ Loading REST/JSON interface...'),
 	logtalk_load(rest(rest)),
 	consult('./library/REST/rest_proxy_module'),
 	nl,
